@@ -1,0 +1,46 @@
+*{
+    font-family: Helvetica;
+}
+body{
+    background-color: lightsalmon;
+    text-align: center;
+}
+#left-upper{
+    width: 30%;
+    height: 400px;
+}
+#left-lower{
+    background-color: darksalmon;
+    width: 30%; 
+    height: 100px;
+}
+#right{
+    background-color: darksalmon;
+    width: 70%;
+    height: 500px;
+}
+img{
+    width: 100%;
+}
+a.miasto{
+    font-style: italic;
+    font-size: 200%;
+    padding: 10px;
+}
+a.miasto:hover{
+    color: ghostwhite;
+}
+table, td{
+    border : 1px dotted maroon;
+}
+table{
+    width: 70%;
+    margin: auto;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+#left{
+    width: 30%;
+}
