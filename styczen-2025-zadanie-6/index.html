@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Systemy liczbowe</title>
+            <link rel="stylesheet" href="styl.css">
+        </head>
+            <body>
+                    <header>
+                        <img src="assets//cyfry.gif" alt="Cyfry szesnastkowe">
+                        <h1>Pozycyjne systemy liczbowe</h1>
+                    </header>
+
+                    <main>
+                        <section id="left">
+                            <table>
+                                <tr>
+                                    <th>HEX</th>
+                                    <th>BIN</th>
+                                    <th>DEC</th>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>1010</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td>1011</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td>1100</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>D</td>
+                                    <td>1101</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>E</td>
+                                    <td>1110</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td>F</td>
+                                    <td>1111</td>
+                                    <td>15</td>
+                                </tr>
+                            </table>
+                        </section>
+
+                            <section id="middle">
+                                <input type="text" name="liczba" id="liczba" placeholder="Wpisz liczbę dziesiętną">
+                                <button type="button" onclick="przelicz()">Przelicz na binarny</button></br>
+                                <p id="wynik">Brak obliczeń</p>
+                            </section>
+
+                                <section id="right">
+                                        <h2>Słowniczek</h2>
+                                            <dl>
+                                                <dt>Binarny</dt>
+                                                <dd>pozycyjny system liczbowy, w którym podstawą jest liczba 2, a do zapisu liczb potrzebne są tylko dwie cyfry: 0 i 1. </dd>
+                                                <dt>Decymalny</dt>
+                                                <dd>pozycyjny system liczbowy, w którym podstawą jest liczba 10; do zapisu liczb stosuje się 10 cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.</dd>
+                                                <dt><a href="https://szesnastkowy_system_liczbowy.pl">Heksadecymalny</a></dt>
+                                                <dd>pozycyjny system liczbowy, w którym podstawą jest liczba 16. Do zapisu liczb w tym systemie potrzebne jest szesnaście znaków. </dd>
+                                            </dl>
+                                </section>
+                    </main>
+
+                    <footer>
+                        <p><i>Stronę opracował: 07262903616</i></p>
+                    </footer>
+                            <script>
+                                function przelicz() {
+                                    // K1: Czytaj liczba dziesiętna (L)
+                                    let L = parseInt(document.getElementById("liczba").value)
+                        
+                                    // K2: Liczba binarna (B) przypisz pusty napis ""
+                                    let B = "";
+                        
+                                    // Specjalny przypadek dla L = 0
+                                    if (L == 0) {
+                                        B = "0";
+                                    } else {
+                                        // Pętla dla K3, K4, K5
+                                        while (L > 0) {
+                                            // K3: B przypisz L mod 2
+                                            B += L % 2; // Dodajemy resztę do ciągu
+                                            // K4: L = L / 2 (zaokrąglona do niższej całkowitej)
+                                            L = Math.floor(L / 2);
+                                            // K5: Jeśli L = 0, idź do K6; w przeciwnym razie idź do K3
+                                        }
+                                    }
+                        
+                                    // K6: Odwróć napis B
+                                    B = B.split("").reverse().join("");
+
+                                    // Rozdzielanie co 4 cyfry od prawej strony
+                                    let formattedB = "";
+                                    for (let i = B.length - 1, count = 0; i >= 0; i--) {
+                                        formattedB = B[i] + formattedB;
+                                        count++;
+                                        if (count % 4 === 0 && i !== 0) {
+                                            formattedB = " " + formattedB;
+                                        }
+                                    }
+
+                                    // Wyświetl wynik w paragrafie z indeksem dolnym
+                                    document.getElementById("wynik").innerHTML = formattedB + "<sub>(2)</sub>";
+                                   }
+                            </script>
+            </body>
+    </html>
