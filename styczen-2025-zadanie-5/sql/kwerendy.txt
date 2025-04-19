@@ -1,0 +1,4 @@
+SELECT Data, Temat FROM `szkolenia` ORDER BY Data ASC; 
+SELECT s.Data, s.Temat, t.Nazwisko, t.Imie FROM `szkolenia` s JOIN trenerzy t ON s.Id_trenera = t.Id;
+SELECT t.Nazwisko, t.Imie, COUNT(*) AS 'Liczba Szkoleń' FROM `trenerzy` t JOIN szkolenia s ON t.Id = s.Id_trenera GROUP BY t.Id; 
+ALTER TABLE zapisy CHANGE COLUMN Id_klienta Id_sluchacza int
