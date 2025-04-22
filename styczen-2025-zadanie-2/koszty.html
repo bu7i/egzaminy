@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Montaż paneli podłogowych</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+            <body>
+                <header>
+                    <img src="montaz_paneli.png" alt="firma usługowa">
+                </header>
+                    <menu>
+                        <a href="index.html">Strona Główna</a>
+                        <a href="oferta.html">Oferta</a>
+                        <a href="koszty.html">Kalkulator kosztów</a>
+                    </menu>
+                        <main>
+                            <h1>Kalkulator kosztów montażu</h1>
+                            <label for="width">Szerokość pomieszczenia [m]</label>
+                            <input type="number" name="width" id="width">
+                            <label for="length">Długośc pomieszczenia [m]</label>
+                            <input type="number" name="length" id="length"></br></br>
+                            <p>Typ panelu</p></br>
+                            <input type="radio" name="panel" id="panel" value="Panele laminowane"><label>Panele laminowane</label></br>
+                            <input type="radio" name="panel" id="panel" value="Panele winylowe"><label>Panele winylowe</label></br>
+                            <input type="radio" name="panel" id="panel" value="Deska podłogowa"><label>Deska podłogowa</label></br>
+                            <button type="button" onclick="oblicz()">Oblicz</button></br>
+                            <p id="sum"></p>
+                        </main>
+                            <footer>
+                                <h5>Autor strony: 07262903616</h5>
+                            </footer>
+            </body>
+            <script>
+                function oblicz(){
+                    let width = document.getElementById('width').value;
+                    let length = document.getElementById('length').value;
+                    let selectedPanel = document.querySelector('input[name="panel"]:checked');
+                    let type = selectedPanel ? selectedPanel.value : null;
+
+                    let koszt = 0;
+                    let powierzchnia = width * length;
+
+                    switch(type){
+                        case "Panele laminowane" : koszt = 12 * powierzchnia; break;
+                        case "Panele winylowe" : koszt = 14 * powierzchnia; break;
+                        case "Deska podłogowa" :  koszt = 18 * powierzchnia; break;
+                    }
+                    
+                    document.getElementById('sum').innerHTML = "Pole powierzchni pomieszczenia: " + powierzchnia + ", koszt montażu " + koszt;
+                }
+            </script>
+    </html>
