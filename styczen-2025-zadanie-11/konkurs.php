@@ -13,9 +13,11 @@
     <main>
         <section id="left">
             <h3>Konkursowe nagrody</h3>
+            
             <form>
             <button type="submit">Losuj nowe nagrody</button>
             </form>
+            
             <table>
                 <tr>
                     <th>Nr</th>
