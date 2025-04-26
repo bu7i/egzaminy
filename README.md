@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm BuLi</h1>
 <h3 align="center">egzaminy INF-03</h3>
 
-- 🔭 I’m currently working on [egzaminy INF-03](https://github.com/bu7i/egzaminy)
+- 🌐 I’m currently working on [egzaminy INF-03](https://www.testy.egzaminzawodowy.info/kwalifikacja-inf3-arkusze)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
