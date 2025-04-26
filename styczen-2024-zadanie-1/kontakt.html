@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma IT</title>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="kontener">
+
+        <div id="logo">
+            <img src="logo.png" alt="firma it">
+        </div>
+        <nav>
+            <a href="index.html">Strona Główna</a>
+            <a href="uslugi.php">Usługi</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <header>
+            <img src="animacja.gif" alt="Usługi informatyczne">
+        </header>
+        <main>
+            <h2>Kontakt</h2>
+            <form>
+            <table>
+                <tr>
+                    <td><p>Imię: </p></td> 
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td><p>Nazwisko: </p></td>
+                    <td><input type="text" name="surname" id="surname"></td>
+                </tr>
+                <tr>
+                    <td><p>E-mail: </p></td>
+                    <td><input type="email" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td><p>Zgłoszenie: </p></td>
+                    <td><textarea name="zgloszenie" id="zgloszenie" cols="40" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="rules" id="rules">Zapoznałam/em się z regulaminem</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="reset">Resetuj</button><button type="button" onclick="klik()">Prześlij</button></td>
+                </tr>
+            </table>
+        </form>
+            <hr>
+            <p id="wynik"></p></br>
+        </main>
+        <footer>
+            <p>Autor strony: 08262903616</p>
+        </footer>
+    </div>
+    <script>
+        function klik(){
+            let imie = document.getElementById('name').value;
+            let nazwisko = document.getElementById('surname').value;
+            let email = document.getElementById('email').value;
+            let zgloszenie = document.getElementById('zgloszenie').value;
+            let rules = document.getElementById('rules');
+
+            if(rules.checked){
+                document.getElementById('wynik').innerHTML = "<p style='text-transform: uppercase;'>" + imie + " " + nazwisko + "</p>Treść twojej sprawy: " + zgloszenie
+                document.getElementById('wynik').style.color = "navy";
+            }else{
+                document.getElementById('wynik').innerHTML = "Musisz zapoznać się z regulaminem";
+                document.getElementById('wynik').style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
