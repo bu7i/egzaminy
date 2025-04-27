@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputery</title>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id="kontener">
+        <header>
+            <img src="animacja.gif" alt="Pogotowie komputerowe">
+        </header>
+        <nav>
+            <a href="index.html">Strona Główna</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <main>
+            <section id="left"></section>
+            <section id="middle">
+                <h2>Kontakt</h2>
+                <form>
+                <table>
+                    <tr>
+                        <td>Imię: </td>
+                        <td><input type="text" name="imie" id="imie"></td>
+                    </tr>
+                    <tr>
+                        <td>Nazwisko: </td>
+                        <td><input type="text" name="nazwisko" id="nazwisko"></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail: </td>
+                        <td><input type="email" name="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Zgłoszenie: </td>
+                        <td><select name="zgloszenie" id="zgloszenie">
+                            <option value="naprawa">naprawa komputerów</option>
+                            <option value="odzyskiwanie">odzyskiwanie danych</option>
+                            <option value="wirusy">wirusy</option>
+                            <option value="lan">konfiguracja LAN</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="kopia" id="kopia">Wyślij kopię wiadomości</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="reset">Czyść</button><button type="button" onclick="klik()">Wyślij</button></td>
+                    </tr>
+                </table>
+            </form>
+            <hr>
+            <p id="wynik"></p>
+            </section>
+            <section id="right"></section>
+        </main> 
+        <footer>
+            <p><i>Autor: 07262903616</i></p>
+        </footer>
+    </div>
+    <script>
+        function klik(){
+            let imie = document.getElementById("imie").value;
+            let nazwisko = document.getElementById("nazwisko").value;
+            let email = document.getElementById("email").value.toLowerCase();
+            let zgloszenie = document.getElementById("zgloszenie").value;
+
+            document.getElementById("wynik").innerHTML = imie + " " + nazwisko + "</br>" + email + "</br>Usługa: " + zgloszenie;          
+        }
+    </script>
+</body>
+</html>
