@@ -1,0 +1,37 @@
+*{
+    font-family: Tahoma;
+}
+header, footer{
+    background-color: SaddleBrown;
+    color: white;
+    padding: 3px;
+    text-align: center;
+}
+#left, #right{
+    background-color: tan;
+    height: 400px;
+    width: 40%;
+}
+#middle{
+    background-color: wheat; 
+    height: 400px;
+    width: 20%;
+}
+img{
+    margin: 20px;
+    float: right;
+}
+h4{
+    text-align: center;
+}
+input{
+    margin: 5px;
+}
+li:hover{
+    background-color: sienna;
+    color: white;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
